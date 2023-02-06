@@ -33,7 +33,7 @@ def commit():
 
 @app.route("/")
 def hello():
-    return render_template('index.html')
+    return render_template('mainpage.html')
 
 @app.route('/login', methods =['POST', 'GET'])
 def login():
@@ -49,7 +49,7 @@ def login():
             message = 'Invalid Username or Password!'
     elif request.method == 'POST':
         message = 'Enter your Username and password!'
-    return render_template('index.html', message = message)
+    return render_template('mainpage.html', message = message)
 
 @app.route('/registration', methods =['GET', 'POST'])
 def registration():
