@@ -51,8 +51,8 @@ def login():
         message = 'Enter your Username and password!'
     return render_template('mainpage.html', message = message)
 
-@app.route('/registration', methods =['GET', 'POST'])
-def registration():
+@app.route('/registrationpage', methods =['GET', 'POST'])
+def registrationpage():
     message = ''
     if request.method == 'POST' and str(request.form['username']) !="" and str(request.form['password']) !="" and str(request.form['firstname']) !="" and str(request.form['lastname']) !="" and str(request.form['email']) !="":
         username = str(request.form['username'])
@@ -79,7 +79,7 @@ def registration():
                     return responsePage(row[0], row[1], row[2], row[3])
     elif request.method == 'POST':
         message = 'Missing Fields!'
-    return render_template('registration.html', message = message)
+    return render_template('registrationpage.html', message = message)
 
 @app.route("/download")
 def download():
